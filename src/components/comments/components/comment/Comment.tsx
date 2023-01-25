@@ -1,6 +1,12 @@
 import styles from './Comments.module.css';
+import { IComment } from '../../../../types';
+import React from 'react';
 
-const Comment = ({thread}) => {
+interface IProps {
+  thread: IComment
+}
+
+const Comment: React.FC<IProps> = ({thread}) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.userIcon}>

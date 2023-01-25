@@ -1,7 +1,12 @@
 import React from "react";
 import { Comments } from './comments';
+import { IVideo } from '../types';
 
-const VideoDetail = ({ video }) => {
+interface IProps {
+  video: IVideo | null
+}
+
+const VideoDetail: React.FC<IProps> = ({ video }) => {
   if (!video) {
     return <div>Loading...</div>;
   }
