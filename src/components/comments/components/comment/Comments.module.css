@@ -1,0 +1,37 @@
+.wrapper {
+    display: flex;
+    gap: calc(var(--global-grid-size) * 2);
+}
+
+.userIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--clementine);
+    font-size: 1rem;
+    color: var(--white);
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--global-grid-size);
+}
+
+.userName {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.commentDate {
+    font-size: 0.75rem;
+    padding-bottom: 1px;
+}

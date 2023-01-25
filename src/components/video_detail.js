@@ -1,4 +1,5 @@
 import React from "react";
+import { Comments } from './comments';
 
 const VideoDetail = ({ video }) => {
   if (!video) {
@@ -20,6 +21,7 @@ const VideoDetail = ({ video }) => {
       <div className="details">
         <div>{video.snippet.title}</div>
         <div>{video.snippet.description}</div>
+        <Comments videoId={videoId}/>
       </div>
     </div>
   );
