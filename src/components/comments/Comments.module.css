@@ -1,3 +1,9 @@
 .wrapper {
     width: 100%;
+    margin-top: var(--global-grid-size);
+    border-top: 1px solid var(--alto);
+}
+
+.title {
+    margin: var(--global-grid-size) 0;
 }
