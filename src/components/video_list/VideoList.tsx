@@ -1,6 +1,6 @@
 import React from "react";
-import VideoListItem from "./video_list_item";
-import { IVideo } from '../types';
+import { IVideo } from '../../types';
+import { VideoListItem } from '../video_list_item';
 
 type IProps = {
   onVideoSelect: (selectedVideo: IVideo) => void;

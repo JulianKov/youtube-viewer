@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import YTSearch from "youtube-api-search";
-import SearchBar from "./components/search_bar";
-import VideoList from "./components/video_list";
-import VideoDetail from "./components/video_detail";
-import { IVideo } from './types';
 import _ from 'lodash';
+import { VideoDetail, VideoList, SearchBar } from "./components";
+import { IVideo } from './types';
 
 const {REACT_APP_API_KEY} = process.env;
 
