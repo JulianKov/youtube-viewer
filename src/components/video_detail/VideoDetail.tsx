@@ -1,6 +1,6 @@
 import React from "react";
-import { Comments } from './comments';
-import { IVideo } from '../types';
+import { Comments } from '../comments';
+import { IVideo } from '../../types';
 
 interface IProps {
   video?: IVideo

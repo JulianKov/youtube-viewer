@@ -1,5 +1,5 @@
 import React from "react";
-import { IVideo } from '../types';
+import { IVideo } from '../../types';
 
 type IProps = {
   onVideoSelect: (selectedVideo: IVideo) => void;
