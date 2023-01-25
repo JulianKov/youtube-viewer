@@ -21,12 +21,10 @@ const Comment: React.FC<IProps> = ({thread}) => {
             { (new Date(thread?.snippet?.topLevelComment?.snippet?.updatedAt)).toISOString().substring(0, 10)  || "" }
           </span>
           {thread?.snippet?.topLevelComment?.snippet?.likeCount ? <span>👍 {thread?.snippet?.topLevelComment?.snippet?.likeCount}</span> : null }
-
         </div>
-        <p>
+        <p className={styles.commentText}>
           { thread?.snippet?.topLevelComment?.snippet?.textOriginal || "" }
         </p>
-
       </div>
     </div>
   )

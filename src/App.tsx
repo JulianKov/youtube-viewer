@@ -6,20 +6,20 @@ import VideoDetail from "./components/video_detail";
 import { IVideo } from './types';
 import _ from 'lodash';
 
-export const API_KEY = "AIzaSyCbcQMTPqAevOao2BQsQadm5SFTZljP2dM";
+const {REACT_APP_API_KEY} = process.env;
 
 const App = () => {
   const [selectedVideo, setSelectedVideo] = useState<IVideo>();
   const [videos, setVideos] = useState<IVideo[]>([]);
 
   const videoSearch = (searchPhrase: string) => {
-    YTSearch({ key: API_KEY, term: searchPhrase }, (dataVideos: IVideo[]) => {
+    YTSearch({ key: REACT_APP_API_KEY, term: searchPhrase }, (dataVideos: IVideo[]) => {
       setVideos(dataVideos);
       setSelectedVideo(dataVideos[0])
     });
   }
   
-  const debouceSearch = _.debounce((term) => {
+  const debounceSearch = _.debounce((term) => {
     videoSearch(term);
   }, 300);
   
@@ -29,7 +29,7 @@ const App = () => {
   
   return (
     <div>
-      <SearchBar onSearchTermChange={debouceSearch} />
+      <SearchBar onSearchTermChange={debounceSearch} />
       <VideoDetail video={selectedVideo} />
       <VideoList
         onVideoSelect={(selectedVideo: IVideo) => setSelectedVideo(selectedVideo)}

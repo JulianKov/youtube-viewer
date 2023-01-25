@@ -2,4 +2,4 @@ export interface IProps {
   videoId: string
 }
 
-export type IParams = string | string[][] | Record<string, string>
+export type IParams = Record<string, string>

@@ -1,6 +1,7 @@
 .wrapper {
     display: flex;
     gap: calc(var(--global-grid-size) * 2);
+    margin-top: var(--global-grid-size);
 }
 
 .userIcon {
@@ -34,4 +35,8 @@
 .commentDate {
     font-size: 0.75rem;
     padding-bottom: 1px;
+}
+
+.commentText {
+    font-size: 0.875rem;
 }
