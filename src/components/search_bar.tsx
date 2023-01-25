@@ -1,7 +1,15 @@
 import React, { Component } from "react";
 
-class SearchBar extends Component {
-  constructor(props) {
+interface IProps {
+  onSearchTermChange: (term: string) => void
+}
+
+interface IState {
+  term: string;
+}
+
+class SearchBar extends Component<IProps, IState> {
+  constructor(props: IProps) {
     super(props);
     this.state = { term: "" };
   }
@@ -21,7 +29,7 @@ class SearchBar extends Component {
    * Function that is being called every time the input has been changed
    * @param {*} term
    */
-  onInputChange(term) {
+  onInputChange(term: string) {
     this.setState({ term });
     this.props.onSearchTermChange(term);
   }

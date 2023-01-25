@@ -4,15 +4,23 @@ import YTSearch from "youtube-api-search";
 import SearchBar from "./components/search_bar";
 import VideoList from "./components/video_list";
 import VideoDetail from "./components/video_detail";
+import { IVideo } from './types';
 
 export const API_KEY = "AIzaSyCbcQMTPqAevOao2BQsQadm5SFTZljP2dM";
 
-class App extends Component {
+interface IProps {}
+
+interface IState {
+  videos: IVideo[];
+  selectedVideo: IVideo | null;
+}
+
+class App extends Component<IProps, IState> {
   /**
    * Lifecycle method that initializes the state of the component
    * @param {*} props
    */
-  constructor(props) {
+  constructor(props: IProps) {
     super(props);
     this.state = {
       videos: [],
@@ -31,9 +39,8 @@ class App extends Component {
    * Function that gets the search-term and returns a list of videos
    * @param {*} term
    */
-  videoSearch(term) {
-    YTSearch({ key: API_KEY, term: term }, (videos) => {
-      console.log("videos", videos);
+  videoSearch(term: string) {
+    YTSearch({ key: API_KEY, term: term }, (videos: IVideo[]) => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0],
@@ -53,7 +60,7 @@ class App extends Component {
         <SearchBar onSearchTermChange={videoSearch} />
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList
-          onVideoSelect={(selectedVideo) => this.setState({ selectedVideo })}
+          onVideoSelect={(selectedVideo: IVideo) => this.setState({ selectedVideo })}
           videos={this.state.videos}
         />
       </div>
