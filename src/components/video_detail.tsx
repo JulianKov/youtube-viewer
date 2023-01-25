@@ -3,7 +3,7 @@ import { Comments } from './comments';
 import { IVideo } from '../types';
 
 interface IProps {
-  video: IVideo | null
+  video?: IVideo
 }
 
 const VideoDetail: React.FC<IProps> = ({ video }) => {
